@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 
-#include "macros.h"
+#include "nns_macros.h"
 
 // Returns a pointer, otherwise exits gracefully.
 static void* safe_malloc(size_t size)
