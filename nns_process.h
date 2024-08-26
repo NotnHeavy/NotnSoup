@@ -13,8 +13,8 @@ extern "C"
 
 #include <string.h>
 #include <stdbool.h>
-#include "macros.h"
-#include "utility.h"
+#include "nns_macros.h"
+#include "nns_utility.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // GLOBALS                                                                  //

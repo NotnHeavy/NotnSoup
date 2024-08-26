@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-#include "macros.h"
+#include "nns_macros.h"
 
 static inline std::string ltrim(std::string str)
 {
