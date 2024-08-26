@@ -89,7 +89,7 @@ static bool StartProcess(const char* path, const char* args, int flags, processd
 	WaitForSingleObject(pi.hProcess, INFINITE);
 
 	// Read from the stdout pip if pipeout isn't nullptr.
-	if (data->pipeout)
+	if (data && data->pipeout)
 	{
 		CloseHandle(write);
 		for (;;)
