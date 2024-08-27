@@ -6,7 +6,7 @@
 
 #define NOTNSOUP_MAJOR  1
 #define NOTNSOUP_MINOR  0
-#define NOTNSOUP_PATCH  0
+#define NOTNSOUP_PATCH  1
 
 #ifdef __cplusplus
 #include <iostream>

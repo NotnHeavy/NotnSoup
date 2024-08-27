@@ -29,10 +29,10 @@ enum EProcessFlags
     PROCESS_NOCONSOLE = (1 << 0)
 };
 
-// Used for the StartProcess()::pipeout argument if you want to receive
-// console output from the launched process. This will be called n times
-// for each block of characters size PIPE_BUFFER_SIZE is found in the
-// process' stdout at the end of its execution.
+// Used for the StartProcess()::data argument if you want to receive console 
+// output from the launched process. This will be called n times for each block 
+// of characters size PIPE_BUFFER_SIZE is found in the process' stdout at the 
+// end of its execution.
 typedef void (*proc_pipeout)(const char* buffer, void* data);
 
 // Use this for sharing data about pipeout.
@@ -60,7 +60,7 @@ static bool StartProcess(const char* path, const char* args, int flags, processd
 	// Execute the process.
 #if defined(_WIN32)
 	// Set up process blocks.
-	STARTUPINFO si;
+	STARTUPINFOA si;
 	PROCESS_INFORMATION pi;
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
@@ -92,6 +92,7 @@ static bool StartProcess(const char* path, const char* args, int flags, processd
 	if (data && data->pipeout)
 	{
 		CloseHandle(write);
+		write = INVALID_HANDLE_VALUE;
 		for (;;)
 		{
 			// Read into a buffer.
@@ -111,8 +112,10 @@ static bool StartProcess(const char* path, const char* args, int flags, processd
 startprocess_error:
 	CloseHandle(pi.hProcess);
 	CloseHandle(pi.hThread);
-	if (data)
+	if (read != INVALID_HANDLE_VALUE)
 		CloseHandle(read);
+	if (write != INVALID_HANDLE_VALUE)
+		CloseHandle(write);
 #elif defined(__linux__)
 
 #else
