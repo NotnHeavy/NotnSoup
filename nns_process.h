@@ -15,6 +15,7 @@ extern "C"
 #include <stdbool.h>
 #include "nns_macros.h"
 #include "nns_utility.h"
+#include "nns_os.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // GLOBALS                                                                  //

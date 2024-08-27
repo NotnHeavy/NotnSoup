@@ -6,19 +6,12 @@
 
 #define NOTNSOUP_MAJOR  1
 #define NOTNSOUP_MINOR  0
-#define NOTNSOUP_PATCH  1
+#define NOTNSOUP_PATCH  2
 
 #ifdef __cplusplus
 #include <iostream>
 #else
 #include <stdio.h>
-#endif
-
-// TODO: macos, linux code
-#if defined(_MSC_VER)
-#include <Windows.h>
-#elif
-
 #endif
 
 // Standardising variadic argument macros is impossible, apparently.
