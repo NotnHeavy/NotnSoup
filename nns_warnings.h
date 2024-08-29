@@ -2,13 +2,9 @@
 // MADE BY NOTNHEAVY.                                                       //
 //////////////////////////////////////////////////////////////////////////////
 
-// General OS-specific code.
-
 #pragma once
 
-// TODO: macos, linux code
-#ifdef _WIN32
-#include <Windows.h>
-#elif
-
+#ifdef _MSC_VER
+#pragma warning(disable: 4100) // 'identifier' : unreferenced formal parameter
+#pragma warning(disable: 4505) // 'function' : unreferenced local function has been removed
 #endif

@@ -6,7 +6,7 @@
 
 #define NOTNSOUP_MAJOR  1
 #define NOTNSOUP_MINOR  0
-#define NOTNSOUP_PATCH  2
+#define NOTNSOUP_PATCH  3
 
 #ifdef __cplusplus
 #include <iostream>
@@ -27,7 +27,3 @@
 		fprintf(stderr, message VA_ARGS(__VA_ARGS__));	\
 		ret;											\
 	}	
-
-#ifdef _MSC_VER
-#pragma warning(disable : 6255)
-#endif
