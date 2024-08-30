@@ -6,14 +6,6 @@
 
 #pragma once
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-#include <string.h>
-#include <stdbool.h>
-#include "nns_macros.h"
 #include "nns_utility.h"
 #include "nns_os.h"
 
@@ -22,7 +14,7 @@ extern "C"
 //////////////////////////////////////////////////////////////////////////////
 
 // Default pipe buffer size.
-#define PIPE_BUFFER_SIZE 256
+#define NNS_PIPE_BUFFER_SIZE 256
 
 // Process flags for StartProcess().
 enum EProcessFlags
@@ -49,11 +41,11 @@ typedef struct s_processdata
 
 // Basic process function. Only use it for basic process execution + stdout
 // piping (if specified). Returns true on success, otherwise false.
-static bool StartProcess(const char* path, const char* args, int flags, processdata* data)
+static bool NNS_StartProcess(const char* path, const char* args, int flags, processdata* data)
 {
 	// Sort out command-line arguments.
 	bool returnValue = true;
-	char* exec = (char*)safe_malloc(strlen(path) + strlen(args) + 2);
+	char* exec = (char*)NNS_malloc(strlen(path) + strlen(args) + 2);
     strcat(exec, path);
 	strcat(exec, " ");
     strcat(exec, args);
@@ -97,7 +89,7 @@ static bool StartProcess(const char* path, const char* args, int flags, processd
 		for (;;)
 		{
 			// Read into a buffer.
-			char buffer[PIPE_BUFFER_SIZE + 1] = { 0 };
+			char buffer[NNS_PIPE_BUFFER_SIZE + 1] = { 0 };
 			DWORD readWord;
 			if (ReadFile(read, buffer, sizeof(buffer) - 1, &readWord, NULL))
 			{
@@ -125,7 +117,3 @@ startprocess_error:
 #endif
 	return returnValue;
 }
-
-#ifdef __cplusplus
-}
-#endif
