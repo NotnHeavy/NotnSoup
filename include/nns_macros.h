@@ -5,8 +5,8 @@
 #pragma once
 
 #define NOTNSOUP_MAJOR  1
-#define NOTNSOUP_MINOR  0
-#define NOTNSOUP_PATCH  4
+#define NOTNSOUP_MINOR  1
+#define NOTNSOUP_PATCH  0
 
 #ifdef __cplusplus
 #include <iostream>
