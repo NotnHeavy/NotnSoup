@@ -7,6 +7,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <iterator>
+#include <algorithm>
 
 #include "nns_macros.h"
 

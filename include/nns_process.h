@@ -40,7 +40,7 @@ typedef struct s_processdata
 // Basic process function. Only use it for basic process execution + stdout
 // piping (if specified). `data` can be NULL. `flags` is Windows-only (for
 // CreateProcess). Returns true on success, otherwise false.
-STOCK static bool NNS_StartProcess(char* argv[], int flags, processdata* data)
+STOCK static bool NNS_StartProcess(char* argv[], STOCK int flags, processdata* data)
 {
 	// Init.
 	bool returnValue = false;

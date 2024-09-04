@@ -15,4 +15,4 @@ This is a collection of CMake scripts, C and C++ headers that you can drag into 
 - `/cmake/` - CMake scripts
 - `/include/` - headers that can be used in either C or C++ code
 - `/include/c/` - headers designed for C code specifically (although you *can* use them in C++ code)
-- `/include/cpp/` - C++-only headers
+- `/include/cxx/` - C++-only headers
