@@ -88,9 +88,9 @@ STOCK static bool NNS_StartProcess(char* argv[], int flags, processdata* data)
 	WaitForSingleObject(pi.hProcess, INFINITE);
 
 	// Read from the stdout pipe if data->pipeout isn't NULL.
-	CloseHandle(writepipe);
 	if (data && data->pipeout)
 	{
+		CloseHandle(writepipe);
 		writepipe = INVALID_HANDLE_VALUE;
 		for (;;)
 		{
