@@ -8,7 +8,8 @@ This is a collection of CMake scripts, C and C++ headers that you can drag into 
 
 # Current platforms supported
 - Windows
-- TODO: Linux, macOS
+- Linux
+- macOS (hopefully)
 
 # Directory tree
 - `/cmake/` - CMake scripts

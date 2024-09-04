@@ -5,7 +5,7 @@
 #pragma once
 
 #define NOTNSOUP_MAJOR  1
-#define NOTNSOUP_MINOR  2
+#define NOTNSOUP_MINOR  3
 #define NOTNSOUP_PATCH  0
 
 #include <stdio.h>
@@ -30,6 +30,16 @@
 		fprintf(stderr, message VA_ARGS(__VA_ARGS__));	\
 		ret;											\
 	}	
+
+#ifdef __GNUC__
+#	define STOCK __attribute__((unused))
+#else
+#	define STOCK
+#endif
+
+#if defined(__unix__) || defined(__APPLE__)
+#	define NNS_ISUNIX
+#endif
 
 //////////////////////////////////////////////////////////////////////////////
 // WARNINGS                                                                 //

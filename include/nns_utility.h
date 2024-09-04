@@ -11,7 +11,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 // Returns a pointer, otherwise exits gracefully.
-static void* NNS_malloc(size_t size)
+STOCK static void* NNS_malloc(size_t size)
 {
 	// Using calloc() will set the memory and can be faster than malloc().
 	void* ptr = calloc(1, size);

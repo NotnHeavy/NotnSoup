@@ -1,1 +1,16 @@
+// ignore linux executables
+*
+!/**/
+!*.*
+
+// ignore other build files
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.exp
+*.lib
+
+// vscode folder
 .vscode/

@@ -6,9 +6,16 @@
 
 #pragma once
 
-// TODO: macos, linux code
-#ifdef _WIN32
-#include <Windows.h>
-#elif
+#include "nns_macros.h"
 
+// TODO: macos, linux code
+#if defined(_WIN32)
+#include <Windows.h>
+#elif defined(NNS_ISUNIX)
+#include <unistd.h>
+#include <dlfcn.h>
+#include <spawn.h>
+#include <sys/wait.h>
+
+extern char** environ;
 #endif
