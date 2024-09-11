@@ -6,7 +6,7 @@
 
 #define NOTNSOUP_MAJOR  1
 #define NOTNSOUP_MINOR  3
-#define NOTNSOUP_PATCH  2
+#define NOTNSOUP_PATCH  3
 
 #include <stdio.h>
 #include <stdlib.h>
