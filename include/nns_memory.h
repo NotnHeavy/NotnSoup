@@ -16,7 +16,7 @@
 #	define PROT_WRITE	0x2
 #	define PROT_EXEC	0x4 
 #	define PROT_NONE	0x0
-#elif defined(NNS_ISUNIX)
+#elif defined(NNS_POSIX)
 #	define NNS_PAGESIZE	4096
 #	define NNS_ALIGN(x) (void*)((uintptr_t)(x) & ~(NNS_PAGESIZE - 1))
 #	define NNS_MODALIGN(x) ((uintptr_t)(x) % NNS_PAGESIZE)
@@ -65,10 +65,10 @@ STOCK static inline bool NNS_MemoryProtect(void* address, size_t length, int acc
 		return false;
 	}
 	return (VirtualProtect(address, length, protection, &buffer) ? true : false);
-#elif defined(NNS_ISUNIX)
+#elif defined(NNS_POSIX)
 	return ((mprotect(NNS_ALIGN(address), length + NNS_MODALIGN(address), access) == 0) ? true : false);
-#endif
-
+#else
 	// Unsupported operating system?
 	return false;
+#endif
 }

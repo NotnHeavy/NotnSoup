@@ -11,7 +11,7 @@
 // TODO: macos, linux code
 #if defined(_WIN32)
 #   include <Windows.h>
-#elif defined(NNS_ISUNIX)
+#elif defined(NNS_POSIX)
 #   include <unistd.h>
 #   include <dlfcn.h>
 #   include <spawn.h>

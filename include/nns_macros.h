@@ -38,7 +38,7 @@
 #endif
 
 #if defined(__unix__) || defined(__APPLE__)
-#	define NNS_ISUNIX
+#	define NNS_POSIX
 #endif
 
 //////////////////////////////////////////////////////////////////////////////

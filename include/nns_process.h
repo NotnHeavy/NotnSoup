@@ -116,7 +116,7 @@ startprocess_error:
 		CloseHandle(readpipe);
 	if (writepipe != INVALID_HANDLE_VALUE)
 		CloseHandle(writepipe);
-#elif defined(NNS_ISUNIX)
+#elif defined(NNS_POSIX)
 	// Create read/write pipes if pipeout isn't NULL.
 	int descriptors[2];
 	if (data)
